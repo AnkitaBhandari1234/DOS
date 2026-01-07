@@ -15,11 +15,11 @@ const page = () => {
     <div>
       <AboutHeader />
       <AboutIntro />
-      <WhyChooseUs />
+     
 
       <Mission />
       <StatsData />
-      <Course />
+      
       <Testimonial />
       
       

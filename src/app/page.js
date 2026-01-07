@@ -1,4 +1,5 @@
 
+import StatsData from "@/PageComponent/Component/AboutPage/StatsData";
 import Aboutus from "@/PageComponent/Home/Aboutus";
 import Course from "@/PageComponent/Home/Course";
 import CTA from "@/PageComponent/Home/CTA";
@@ -17,10 +18,11 @@ export default function Home() {
   <HeroSection />
   <Aboutus/>
   <Course/>
+  <WhyChooseUs/>
+  <StatsData/>
   <Testimonial/>
   <Team/>
   
-  <WhyChooseUs/>
   <CTA/>
 
  </div>

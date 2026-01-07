@@ -1,6 +1,9 @@
 import { Merriweather, Quicksand, Roboto } from 'next/font/google';
 import React from 'react'
 import { AiOutlineEye, AiOutlineRocket } from 'react-icons/ai'
+import { FiAward, FiBookOpen, FiHeart } from 'react-icons/fi';
+import { LuTarget, LuUsers } from 'react-icons/lu';
+import { MdOutlineRemoveRedEye } from 'react-icons/md';
 const quicksand = Quicksand({
   weight: "700",
 });
@@ -11,50 +14,63 @@ const meriweather = Merriweather({
   weight: "700",
 });
 const Mission = () => {
+ const coreValue = [
+    { 
+      icon:<LuTarget />,
+
+      title: "Excellence",
+      desc: "We strive for the highest standards in Korean language education.",
+     },
+    {
+      icon: <FiHeart />,
+      title: "Dedication",
+      desc: "Our instructors are passionate about student success.",
+    },
+    {
+      icon: <MdOutlineRemoveRedEye />,
+      title: "Innovation",
+      desc: "Modern teaching methods with traditional values.",
+    },
+    {
+       icon: <LuUsers />,
+      
+      title: "Community",
+      desc: "Building a supportive learning environment for all.",
+    },
+  ];
   return (
-<section className="bg-[#221F3C] py-24 px-14">
+<section className="bg-[#F7F4F0] py-24 px-14">
   {/* Heading */}
-  <div className="text-center max-w-3xl mx-auto mb-16">
-    <span className={`text-sm text-[#524DD3] ${quicksand.className} uppercase tracking-wider`}>
-      Our Values
-    </span>
-    <h2 className={`text-4xl text-white mt-2 ${meriweather.className}`}>
-      Vision & Mission
+  <div className="text-center max-w-xl mx-auto mb-16">
+     <span
+          className={`bg-[#EFE2DE] ${quicksand.className} text-base uppercase   text-[#B12531] rounded-full px-7 py-2 w-fit tracking-wider `}
+        >
+          what we stand for
+        </span>
+    <h2 className={`text-4xl text-[#2B303B] mt-8 ${meriweather.className}`}>
+      Our Core<span className='text-[#B12531]'> Values</span>
     </h2>
-    <p className={`text-[#C8C6E3] mt-4 ${roboto.className}`}>
+    <p className={`text-[#4A4E6A] mt-4 ${roboto.className}`}>
       At Clarity IT Institute, our vision and mission guide everything we do – from empowering learners to shaping the future of IT professionals.
     </p>
   </div>
 
   {/* Vision & Mission Cards */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-    {/* Vision */}
-    <div className="bg-[linear-gradient(#26224A,#1D1A34)] p-8 rounded-2xl shadow-md hover:shadow-[0_8px_35px_rgba(82,77,211,0.45)] transition-shadow duration-300">
-      <div className="flex items-center gap-4 mb-4">
-        <div className="w-12 h-12 flex items-center justify-center bg-[#524DD3]/20 text-[#524DD3] rounded-full text-2xl">
-          {/* Eye icon for Vision */}
-          <AiOutlineEye />
-        </div>
-        <h3 className={`text-xl font-semibold text-white ${quicksand.className}`}>Our Vision</h3>
-      </div>
-      <p className={`${roboto.className} text-[#C8C6E3]`}>
-        To empower every learner with the skills, confidence, and mindset to thrive in the rapidly evolving IT industry and become future-ready professionals.
-      </p>
-    </div>
-
-    {/* Mission */}
-    <div className="bg-[linear-gradient(#26224A,#1D1A34)] p-8 rounded-2xl shadow-md hover:shadow-[0_8px_35px_rgba(82,77,211,0.45)] transition-shadow duration-300">
-      <div className="flex items-center gap-4 mb-4">
-        <div className="w-12 h-12 flex items-center justify-center bg-[#524DD3]/20 text-[#524DD3] rounded-full text-2xl">
-          {/* Rocket icon for Mission */}
-          <AiOutlineRocket />
-        </div>
-        <h3 className={`text-xl font-semibold text-white ${quicksand.className}`}>Our Mission</h3>
-      </div>
-      <p className={`${roboto.className} text-[#C8C6E3]`}>
-        To deliver practical, hands-on IT education guided by experienced mentors, fostering real-world problem-solving, industry-relevant skills, and career success for all students.
-      </p>
-    </div>
+  <div className="grid grid-cols-1 md:grid-cols-4 gap-10 items-center  max-w-6xl mx-auto">
+    {
+      coreValue.map((val,i)=>{
+        return(
+          <div className='bg-white px-5 py-10 flex flex-col gap-2 items-center rounded-2xl text-center' key={i}>
+             <div className="bg-[#F3E3E1] px-5 py-4 rounded-[20px] h-fit w-fit ">
+              <span className="  text-[#B12531] text-3xl">{val.icon}</span>
+                </div>
+             <h3 className={`text-[#2B303B] text-lg ${meriweather.className} mt-4 `}>{val.title}</h3>
+            <p className={`text-[#676F7E] text-sm`}>{val.desc}</p>
+            </div>
+        )
+      })
+    }
+  
   </div>
 </section>
 

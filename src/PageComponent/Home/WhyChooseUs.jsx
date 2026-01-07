@@ -1,7 +1,7 @@
 import { Merriweather, Quicksand, Roboto } from "next/font/google";
 import { FaChalkboardTeacher, FaProjectDiagram, FaUserTie, FaRocket, FaClock, FaMoneyBillWave } from "react-icons/fa";
 
-const quicksand = Quicksand({ weight: "600" });
+const quicksand = Quicksand({ weight: "700" });
 const roboto = Roboto({ weight: "400" });
 const meriweather = Merriweather({ weight: "700" });
 
@@ -40,18 +40,17 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="bg-[#F5F6FA] py-20 px-14">
+    <section className="bg-[#FAF8F5] py-20 px-14">
       {/* Heading */}
-      <div className="text-center max-w-3xl mx-auto mb-14">
-        <span className={`text-sm text-[#524DD3] ${quicksand.className}`}>
-          Why Choose Us
+      <div className="text-center max-w-xl mx-auto mb-14">
+        <span
+          className={`bg-[#EFE2DE] ${quicksand.className} text-base uppercase   text-[#B12531] rounded-full px-6 py-2 w-fit  `}
+        >
+          Why Choose DOS ?
         </span>
-        <h2 className={`text-4xl text-[#1E1B3C] mt-2 ${meriweather.className}`}>
-          Learn Smarter. Build Faster. Succeed Stronger.
-        </h2>
-        <p className={`text-[#4A4E6B] mt-4 ${roboto.className}`}>
-          We combine expert mentorship, hands-on learning, and career-focused
-          training to help you succeed in tech.
+       
+        <p className={`text-[#4A4E6A] text-base mt-10 ${roboto.className}`}>
+          At DOS Multi Services, we provide hands-on, career-focused training in languages, accounting, and IT to help students build strong, global-ready careers.
         </p>
       </div>
 
@@ -60,14 +59,14 @@ const WhyChooseUs = () => {
         {points.map((item, i) => (
           <div
             key={i}
-            className="group bg-white p-8 rounded-2xl border border-[#E5E7EE]
+            className="group bg-[#FDFDFC] p-8 rounded-2xl border border-[#E6E1DA]
             shadow-[0_8px_30px_rgba(0,0,0,0.06)]
-            hover:shadow-[0_14px_40px_rgba(82,77,211,0.2)]
+            hover:shadow-[0_14px_40px_rgba(177,37,49,0.2)]
             hover:-translate-y-2 transition-all duration-300"
           >
             <div className="w-14 h-14 flex items-center justify-center rounded-xl
-              bg-[#524DD3]/10 text-[#524DD3] text-2xl
-              group-hover:bg-[#524DD3] group-hover:text-white transition-all">
+              bg-[#F5E7E7] text-[#B12531] text-2xl
+              group-hover:bg-[#B12531] group-hover:text-white transition-all">
               {item.icon}
             </div>
 

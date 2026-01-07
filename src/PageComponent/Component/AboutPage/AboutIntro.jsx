@@ -22,22 +22,26 @@ const AboutIntro = () => {
         },
     ]
   return (
-    <section className='bg-[#221F3C] flex items-center justify-between gap-20 px-14 py-25'>
+    <section className='bg-[#F6F1EF] flex items-center justify-between gap-20 px-14 py-25'>
         {/* text section */}
         <div className='w-[50%] flex flex-col gap-3 '>
-            <span className={`bg-[#524DD3] text-white ${quicksand.className} uppercase tracking-wider text-xs px-4 py-2 rounded-full w-fit`}>about us</span>
-            <h1 className={`text-white ${meriweather.className} text-[40px] leading-snug`}>Empowering Learners to Build Skills, Careers, and Confidence</h1>
-            <p className={`text-[#C8C6E3]  ${roboto.className} leading-6`}>
+            <span
+          className={`bg-[#EFE2DE] ${quicksand.className} text-base uppercase   text-[#B12531] rounded-full px-5 py-2 w-fit tracking-wide `}
+        >
+          our story
+        </span>
+            <h1 className={`text-[#3D3029] ${meriweather.className} text-[40px] leading-snug`}>Empowering Learners to Build Skills, Careers, and Confidence</h1>
+            <p className={`text-[#4A4E6A]  ${roboto.className} leading-6`}>
                 
                 Clarity IT Institute is dedicated to transforming learners into confident,
 industry-ready professionals through practical and structured IT education.
 Our programs focus on real-world skills, hands-on projects, and expert mentorship
 to help students thrive in today’s competitive technology landscape.</p>
        <p
-  className={`${roboto.className} bg-[#524DD3]/10 rounded-xl text-lg flex gap-4 items-start leading-7 text-white px-4 py-4`}
+  className={`${roboto.className} bg-[#EFE2DE] rounded-xl text-lg flex gap-4 items-start leading-7 text-[#676F7E] px-4 py-4`}
 >
   {/* Vertical accent line */}
-  <span className="h-20 w-1.5  bg-[linear-gradient(to_bottom,#524DD3,#6E69F0)] rounded-full"></span>
+  <span className="h-20 w-1.5  bg-[#B12531] rounded-full"></span>
 
   {/* Paragraph text */}
   We don’t just teach technology — we prepare you for real challenges, real projects, and real career opportunities in the IT industry.
@@ -52,8 +56,8 @@ to help students thrive in today’s competitive technology landscape.</p>
                 {
                      highlightPoints.map((val,i)=>{
                         return(
-                             <div key={i} className={` ${roboto.className} bg-[#221F3C]/40  text-sm backdrop-blur-xl px-4 py-3  text-white rounded-3xl  flex gap-5 items-center `}>{val.name}
-                    <IoIosCheckmark className='text-xl  bg-[#524DD3] rounded-full' />
+                             <div key={i} className={` ${roboto.className} bg-[#B12531]/20  text-sm backdrop-blur-xl px-4 py-3  text-white rounded-3xl  flex gap-5 items-center `}>{val.name}
+                    <IoIosCheckmark className='text-xl  bg-[#B12531] rounded-full' />
 
                 </div>
 

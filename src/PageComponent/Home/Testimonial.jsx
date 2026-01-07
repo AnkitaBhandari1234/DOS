@@ -32,16 +32,18 @@ const Testimonial = () => {
   ];
 
   return (
-    <section className="bg-[#ECEBFF] py-20 px-14">
+    <section className="bg-[#FAF8F5] py-20 px-14">
       {/* Heading */}
       <div className="text-center mb-16 max-w-2xl mx-auto">
-        <span className={`text-sm text-[#524DD3] ${quicksand.className}`}>
-          Student Stories
+        <span
+          className={`bg-[#EFE2DE] ${quicksand.className} text-base uppercase   text-[#B12531] rounded-full px-5 py-2 w-fit `}
+        >
+          students stories
         </span>
-        <h2 className={`text-4xl text-[#1E1B3C] mt-2 ${meriweather.className}`}>
+        <h2 className={`text-4xl text-[#1E1B3C] mt-9 ${meriweather.className}`}>
           What Our Students Say
         </h2>
-        <p className={`text-[#4A4E6B] mt-3 ${roboto.className}`}>
+        <p className={`text-[#676F7E] mt-3 ${roboto.className}`}>
           Real feedback from students who transformed their careers with us.
         </p>
       </div>
@@ -51,14 +53,14 @@ const Testimonial = () => {
         {testimonials.map((t, i) => (
           <div
             key={i}
-            className="group bg-white/90 backdrop-blur border border-[#E3E0FF]
+            className="group bg-white/90 backdrop-blur border border-[#EFE2DE]
             rounded-2xl p-7 relative
-            shadow-[0_10px_35px_rgba(82,77,211,0.15)]
-            hover:-translate-y-2 hover:shadow-[0_18px_45px_rgba(82,77,211,0.25)]
+            shadow-[0_8px_30px_rgba(0,0,0,0.06)]
+            hover:-translate-y-2  hover:shadow-[0_14px_40px_rgba(177,37,49,0.2)]
             transition-all duration-300"
           >
             {/* Quote Icon */}
-            <FaQuoteLeft className="text-[#524DD3]/20 text-3xl absolute top-6 right-6" />
+            <FaQuoteLeft className="text-[#EFE2DE] text-3xl absolute top-6 right-6" />
 
             {/* Review */}
             <p className={`${roboto.className} text-[#4A4E6B] text-sm leading-relaxed mb-6`}>
@@ -66,7 +68,7 @@ const Testimonial = () => {
             </p>
 
             {/* Divider */}
-            <span className="block w-10 h-0.5 bg-[#524DD3]/50 rounded-full mb-5"></span>
+            <span className="block w-10 h-0.5 bg-[#B12531]/70 rounded-full mb-5"></span>
 
             {/* User */}
             <div className="flex items-center gap-4">

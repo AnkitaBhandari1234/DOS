@@ -1,6 +1,7 @@
 import { Merriweather, Quicksand, Roboto } from "next/font/google";
 import Image from "next/image";
 import React from "react";
+import { LuCalendar } from "react-icons/lu";
 
 const quicksand = Quicksand({ weight: "700" });
 const roboto = Roboto({ weight: "400" });
@@ -39,52 +40,42 @@ const FeaturedBlog = () => {
   const [bigBlog, ...smallBlogs] = featuredBlogs; // split first blog as big, rest as small
 
   return (
-    <section className="bg-[#F7F7FB] px-6 lg:px-14 py-20">
+    <section className="bg-[#FBFAF9] px-6 lg:px-14 py-20">
       <div className="mb-14 text-center">
-        <h2 className={`text-[#1D1A34] text-5xl font-bold ${merriweather.className}`}>Featured Articles</h2>
+        <span
+          className={`bg-[#EFE2DE] ${quicksand.className} text-base uppercase   text-[#B12531] rounded-full px-7 py-2 w-fit tracking-wider `}
+        >
+         featured article
+        </span>
+        <h2 className={`text-[#1D1A34] text-5xl font-bold tracking-wide ${merriweather.className} mt-8`}>Latest Insights</h2>
         <p className={`text-[#6E6B8F] mt-2 ${roboto.className}`}>Hand-picked blogs curated by our instructors.</p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* BIG FEATURE */}
-        <div className="lg:col-span-2 bg-white rounded-3xl overflow-hidden shadow-[0_10px_30px_rgba(82,77,211,0.12)] hover:-translate-y-1 transition">
-          <Image
-            src={bigBlog.image}
-            alt={bigBlog.title}
-            width={800}
-            height={320}
-            className="w-full h-80 object-cover"
-          />
-          <div className="p-8">
-            <span className="bg-[#524dd3]/10 text-[#524dd3] text-sm px-3 py-1 rounded-full">
-              {bigBlog.category}
-            </span>
-            <h3 className="text-[#1D1A34] text-2xl font-semibold mt-4">{bigBlog.title}</h3>
-            <p className="text-[#6E6B8F] mt-3">{bigBlog.description}</p>
-          </div>
-        </div>
+      <div className={`${roboto.className} relative h-[450px] group overflow-hidden rounded-2xl  `}>
+        <div className="group-hover:scale-105 transition-transform duration-500 ease-in-out  overflow-hidden ">
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,#262626,#26262650)]  backdrop-blur-[1px]  "></div>
 
-        {/* SMALL FEATURES */}
-        <div className="flex flex-col gap-8">
-          {smallBlogs.map((blog) => (
-            <div
-              key={blog.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-[0_8px_24px_rgba(82,77,211,0.12)] hover:-translate-y-1 transition"
-            >
-              <Image
-                src={blog.image}
-                alt={blog.title}
-                width={400}
-                height={150}
-                className="w-full h-[150px] object-cover"
-              />
-              <div className="p-6">
-                <span className="text-xs text-[#524dd3]">{blog.category}</span>
-                <h4 className="text-[#1D1A34] font-semibold mt-2">{blog.title}</h4>
-              </div>
-            </div>
-          ))}
+        <Image src='/feature2.jpg' alt="" width={600} height={700} className="w-full h-[450px] object-cover  "/>
         </div>
+        {/* text */}
+        <div className="absolute bottom-7 left-8 flex flex-col gap-4   ">
+        
+          <span
+          className={`bg-[#EFE2DE] ${quicksand.className} text-base    text-[#B12531] rounded-full px-5 py-1.5 w-fit  `}
+        >
+          Study Tips
+        </span>
+         <h2 className={`text-4xl text-white  ${merriweather.className} `}>10 Essential Tips for EPS-TOPIK Success in 2026
+      
+    </h2>
+    <p className="text-[#D8D7D6] max-w-2xl">Master the Korean language proficiency test with these proven strategies from our expert instructors. Learn how to prepare effectively and achieve your target score.</p>
+    <p className="text-[#D8D7D6] flex items-center gap-3">
+      <LuCalendar className="" />
+      January 3,2026
+
+    </p>
+</div>
+        
       </div>
     </section>
   );

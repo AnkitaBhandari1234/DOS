@@ -8,10 +8,7 @@ const quicksand= Quicksand({
 
 
 const GalleryFilter = () => {
-  return (
-         <section className="py-10">
-        <div className="flex flex-wrap justify-center gap-4">
-          {[
+  const category=[
             "All",
             "Classroom",
             "Workshop",
@@ -19,14 +16,22 @@ const GalleryFilter = () => {
             "Projects",
             "Achievements",
             "Infrastructure",
-          ].map((cat, i) => (
-            <button
-              key={i}
-              className={`${quicksand.className} px-6 py-2 rounded-full border border-gray-300 text-sm hover:bg-[#524dd3] hover:text-white transition`}
-            >
-              {cat}
-            </button>
-          ))}
+          ]
+  return (
+         <section className="py-10">
+        <div className="flex flex-wrap justify-center gap-4">
+         {category.map((cat, i) => (
+      <span
+        key={i}
+        className={`${quicksand.className} px-4 py-2 rounded-full text-sm cursor-pointer ${
+          cat === "All"
+            ? "bg-[#B12531] text-white"
+            : "bg-[#EFE2DE] text-[#B12531]"
+        }`}
+      >
+        {cat}
+      </span>
+    ))}
         </div>
       </section>
 

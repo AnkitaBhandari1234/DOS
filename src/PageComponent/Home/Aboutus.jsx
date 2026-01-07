@@ -1,16 +1,14 @@
 import { Merriweather, Quicksand, Roboto } from "next/font/google";
 import React from "react";
-import { LuCodeXml, LuRocket } from "react-icons/lu";
+import { LuCodeXml, LuRocket, LuTarget, LuUsers } from "react-icons/lu";
 import { LuUserCheck } from "react-icons/lu";
 import teachingImg from "../../../public/about1.webp";
 import codingImg from "../../../public/about2.jpg";
 import Image from "next/image";
-import {
-  FaBriefcase,
-  FaLaptopCode,
-  FaLayerGroup,
-  FaUserTie,
-} from "react-icons/fa";
+import { FiAward, FiBookOpen } from "react-icons/fi";
+import Link from "next/link";
+import { IoArrowForward } from "react-icons/io5";
+
 
 const quicksand = Quicksand({
   weight: "700",
@@ -24,78 +22,111 @@ const meriweather = Merriweather({
 
 const Aboutus = () => {
   const about = [
-    { title: "Expert Mentors", icon: <FaUserTie /> },
-    { title: "Hands-on Projects", icon: <FaLaptopCode /> },
-    { title: "Career Support", icon: <FaBriefcase /> },
-    { title: "Industry Training", icon: <FaLayerGroup /> },
+    { 
+      icon:<LuTarget />,
+
+      title: "Focused Curriculum",
+      desc: "Structured learning paths designed for TOPIK success",
+     },
+    {
+      icon: <LuUsers />,
+      title: "Expert Instructors",
+      desc: "Native speakers and certified Korean language teachers",
+    },
+    {
+      icon: <FiBookOpen />
+,
+      title: "Rich Resources",
+      desc: "Comprehensive study materials and practice tests",
+    },
+    {
+      icon: <FiAward />,
+      title: "Proven Results",
+      desc: "95% of our students pass their target exams",
+    },
   ];
   return (
-    <section className="">
-      <div className="bg-[#F5F6FA] py-16 px-14 flex gap-20  ">
-        {/* text */}
-        <div className="w-[45%]  ">
-          <span
-            className={`  text-sm text-[#524DD3] uppercase ${quicksand.className}`}
-          >
-            Discover Our Story
-          </span>
-          <h1
-            className={` mt-2 text-4xl font-medium text-black ${meriweather.className}`}
-          >
-            Innovating IT Education for a Smarter Tomorrow
-          </h1>
-          <p
-            className={` mt-4 w-fit text-[#4A4E6A]  leading-snug ${roboto.className}`}
-          >
-            “Our mission is to empower learners with practical IT skills,
-            real-world projects, and hands-on mentorship. We combine expert
-            guidance with industry-focused training to help students build
-            successful tech careers.”
-          </p>
-          {/* card */}
-         <div className="grid grid-cols-2 gap-5 w-[90%] mt-8">
-  {about.map((val, i) => (
-    <div
-      key={i}
-      className="flex items-center gap-4 bg-[#F9F9FF] p-5 border border-[#E3E0FF]
-      rounded-xl shadow-sm hover:shadow-[0_4px_20px_rgba(82,77,211,0.4)] transition-all duration-400 ease-in-out"
+   <section className="bg-[#FAF8F5] py-20 px-14 flex flex-col lg:flex-row gap-20">
+
+  {/* Left Column */}
+  <div className={`w-full lg:w-[50%] flex flex-col ${roboto.className}`}>
+    {/* Badge */}
+    <span
+      className={`text-sm text-[#B12531] uppercase ${quicksand.className} bg-[#EFE2DE] w-fit px-5 py-2 rounded-full`}
     >
-      <div className="text-3xl text-[#524DD3]">
-        {val.icon}
-      </div>
+      Discover our story
+    </span>
 
-      <h1 className="text-lg font-medium text-[#1E1B3C] capitalize">
-        {val.title}
-      </h1>
+    {/* Heading */}
+    <h1 className={`mt-6 text-4xl font-medium text-[#3D3029] leading-snug ${meriweather.className}`}>
+      Shaping Futures Through <span className="text-[#B12531]">Excellence</span>
+    </h1>
+
+    {/* Paragraphs */}
+    <p className={`mt-4 text-[#4A4E6A] leading-snug ${roboto.className}`}>
+      DOS Multi Services Pvt. Ltd. is a trusted center for languages, professional accounting, and IT training, helping students gain practical skills for global careers.
+    </p>
+    <p className={`mt-3 text-[#4A4E6A] leading-snug ${roboto.className}`}>
+   We offer programs in Korean, Japanese, and German languages, professional accounting, and IT courses like Graphic Design, Frontend, Backend, and Full Stack Development with hands-on guidance from experienced instructors.
+    </p>
+
+    {/* Cards 2x2 Grid */}
+    <div className="grid grid-cols-2 gap-8 mt-8">
+      {
+        about.map((val,i)=>{
+          return(
+            <div key={i} className="flex  gap-4">
+              <div className="bg-[#F3E3E1] px-3 py-3 rounded-xl h-fit ">
+              <span className="  text-[#B12531] text-2xl">{val.icon}</span>
+                </div>
+              <div>
+                <h3 className={`text-[#2B303B] ${meriweather.className} `}>{val.title}</h3>
+                <p className={`text-[#676F7E] text-sm`}>{val.desc}</p>
+                </div>
+              </div>
+          )
+        })
+      }
+
     </div>
-  ))}
-</div>
+   <Link
+        href="/about"
+        className="bg-[#B12531] flex items-center gap-3 text-white w-fit mt-7  px-8 py-3 rounded-full
+        hover:bg-[#8F1F28] tracking-wide
+        transition-all duration-300"
+      >
+        Learn More
+        <IoArrowForward className="text-xl" />
 
-        </div>
-        {/* image */}
-        <div className="w-[55%] relative mt-10 h-[500px] ">
-          <div className="z-20 w-full h-[420px] ">
-            <Image
-              src={teachingImg}
-              alt="teaching"
-              width={500}
-              height={800}
-              className="w-full h-full object-cover border-5 border-gray-300 rounded-lg shadow-[0_4px_20px_rgba(82,77,211,0.7)]"
-            />
-          </div>
-          <div className="absolute bottom-14 -left-13 w-[53%] h-[300px]  ">
-            <Image
-              src={codingImg}
-              alt=""
-              width={300}
-              height={200}
-              className=" h-full w-full object-cover border-5 border-gray-300 rounded-lg shadow-[0_4px_20px_rgba(82,77,211,0.5)]"
-            />
-          </div>
-          <div></div>
-        </div>
-      </div>
-    </section>
+      </Link>
+   
+
+  </div>
+
+  {/* Right Column - Images */}
+  <div className="w-full lg:w-[50%] relative mt-10 lg:mt-5">
+    <div className="z-20 w-full h-[420px]">
+      <Image
+        src={teachingImg}
+        alt="Teaching"
+        width={500}
+        height={800}
+        className="w-full h-full object-cover rounded-lg shadow-[0_4px_20px_rgba(177,37,49,0.5)] border-4 border-gray-300"
+      />
+    </div>
+    <div className="absolute bottom-0 -left-5 w-[53%] h-[250px]">
+      <Image
+        src={codingImg}
+        alt="Coding"
+        width={300}
+        height={200}
+        className="w-full h-full object-cover rounded-lg shadow-[0_4px_20px_rgba(177,37,49,0.5)] border-4 border-gray-300"
+      />
+    </div>
+  </div>
+
+</section>
+
   );
 };
 
