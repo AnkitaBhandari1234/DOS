@@ -6,6 +6,7 @@ import { FiClock } from "react-icons/fi";
 import { GrLocation } from "react-icons/gr";
 import { IoArrowForward } from "react-icons/io5";
 import { LuCalendar, LuUsers } from "react-icons/lu";
+
 const quicksand = Quicksand({ weight: "700" });
 const roboto = Roboto({ weight: "400" });
 const meriweather = Merriweather({ weight: "700" });

@@ -1,10 +1,8 @@
 import { Merriweather, Quicksand, Roboto } from 'next/font/google';
 import Image from 'next/image';
-import Link from 'next/link';
+
 import React from 'react'
-const quicksand = Quicksand({
-  weight: "700",
-});
+
 
 const roboto = Roboto({
   weight: "400",
@@ -34,12 +32,12 @@ const Banner = ({
   />
 
   {/* Overlay */}
-  <div className="absolute inset-0 bg-black/50" />
+  <div className="absolute inset-0 bg-black/70" />
 
   
 
   {/* Content */}
-  <div className="absolute inset-0 max-w-7xl mx-auto px-6 md:px-14 flex flex-col items-center justify-center gap-4 text-center">
+  <div className="absolute inset-0 max-w-7xl mx-auto px-6 md:px-14 flex flex-col items-center justify-center gap-4 text-center mt-15">
     {/* Label */}
     <span
       className={`bg-[#B12531]/40 text-white px-10 py-1.5 rounded-full backdrop-blur-lg border border-[#B12531]/30 font-medium tracking-wider uppercase ${roboto.className}`}
@@ -49,7 +47,7 @@ const Banner = ({
 
     {/* Title */}
     <h1
-      className={`${meriweather.className} text-4xl sm:text-5xl md:text-6xl leading-tight text-white`}
+      className={`${meriweather.className} text-4xl sm:text-5xl md:text-5xl leading-tight text-white`}
     >
       {title} <span className="text-[#B12531]">{highlight}</span>
     </h1>

@@ -2,10 +2,12 @@ import { Merriweather, Quicksand, Roboto } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
+import courseData from "../Component/Data/CourseData";
 import { FiClock } from "react-icons/fi";
 import { IoArrowForward } from "react-icons/io5";
 import {  LuUsers } from "react-icons/lu";
+
+
 import CourseCard from "../Component/CoursesPage/CourseCard";
 const quicksand = Quicksand({
   weight: "700",
@@ -40,7 +42,12 @@ const Course = () => {
         </p>
       </div>
       {/* card */}
-      <CourseCard/>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6  mt-10 max-w-6xl">
+          {courseData.map((course, i) => (
+            
+            <CourseCard key={i} {...course} />
+          ))}
+        </div>
 
       <Link href='/courses' className="text-[#B12531] font-semibold flex items-center gap-3 capitalize border-2 border-[#B12531] rounded-xl px-6 py-2 mt-10 hover:text-white hover:bg-[#B12531] transition-all duration-200 ease-in-out ">
       view all courses
