@@ -10,45 +10,12 @@ const quicksand = Quicksand({ weight: "700" });
 const roboto = Roboto({ weight: "400" });
 const meriweather = Merriweather({ weight: "700" });
 
-const EventCard = ({image,badge,title,des,date,time,location,enroll}) => {
-//   const events = [
-//     {
-//       image: "/course1.jpg",
-//       badge: "Conference",
-//       title: "Annual Education Conference 2024",
-//       des: "Join industry leaders and educators for insights on the future of education and technology in learning.",
-//       date: "March 15, 2024",
-//       time: "9:00 AM - 5:00 PM",
-//       location: "DOS Main Auditorium",
+const EventCard = ({image,slug,badge,title,des,date,time,location,enroll,showRegister =true,}) => {
 
-//       enroll: "500+ Expected",
-//     },
-//     {
-//       image: "/course2.jpg",
-//       badge: "Ceremony",
-//       title: "Graduation Ceremony",
-//       des: "Celebrating the achievements of our 2024 graduating class. Join us for this milestone event.",
-//       date: "April 20, 2024",
-//       time: "10:00 AM - 1:00 PM",
-//       location: "DOS Campus Ground",
 
-//       enroll: "1000+ Expected",
-//     },
-//     {
-//       image: "/course3.jpg",
-//       badge: "Workshop",
-//       title: "Digital Marketing Workshop",
-//       des: "Hands-on workshop covering SEO, social media marketing, and content strategy fundamentals.",
-//       date: "March 15, 2024",
-//       time: "9:00 AM - 5:00 PM",
-//       location: "Training Room 2",
-
-//       enroll: "50+ Expected",
-//     },
-//   ];
   return (
 
-      <div
+      <Link href={`/event/${slug}`}
            
             className="rounded-xl bg-white relative overflow-hidden group hover:-translate-y-1.5 transition-all duration-300 ease-in-out shadow-sm hover:shadow-lg"
           >
@@ -106,14 +73,13 @@ const EventCard = ({image,badge,title,des,date,time,location,enroll}) => {
                 </div>
               </div>
 
-              <Link
-                href="/contact"
-                className={`text-white bg-[#B12531] rounded-xl py-2.5 flex gap-2 items-center justify-center text-base mt-3 ${roboto.className}`}
-              >
-                Register Now <IoArrowForward />
-              </Link>
+              {showRegister && (
+          <button className="mt-3 bg-[#B12531] text-white py-2.5 rounded-xl flex justify-center items-center gap-2">
+            Register Now <IoArrowForward />
+          </button>
+        )}
             </div>
-          </div>
+          </Link>
    
   );
 };

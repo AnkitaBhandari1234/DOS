@@ -1,84 +1,15 @@
 import EventCard from "@/PageComponent/Component/EventPage/EventCard";
-import PastEvents from "@/PageComponent/Component/EventPage/PastEvents";
-import UpcomingEvents from "@/PageComponent/Component/EventPage/UpcomingEvents";
 import Banner from "@/UI/Banner";
-import React from "react";
+import EventsData from "@/PageComponent/Component/Data/EventsData";
+import { Merriweather, Quicksand, Roboto } from "next/font/google";
+
+const quicksand = Quicksand({ weight: "700" });
+const roboto = Roboto({ weight: "400" });
+const meriweather = Merriweather({ weight: "700" });
 
 const page = () => {
-   const eventsData = {
-    upcoming:[
+  const { upcoming, past } = EventsData;
 
-      {
-        image: "/course1.jpg",
-        badge: "Conference",
-        title: "Annual Education Conference 2024",
-        des: "Join industry leaders and educators for insights on the future of education and technology in learning.",
-        date: "March 15, 2024",
-        time: "9:00 AM - 5:00 PM",
-        location: "DOS Main Auditorium",
-  
-        enroll: "500+ Expected",
-      },
-      {
-        image: "/course2.jpg",
-        badge: "Ceremony",
-        title: "Graduation Ceremony",
-        des: "Celebrating the achievements of our 2024 graduating class. Join us for this milestone event.",
-        date: "April 20, 2024",
-        time: "10:00 AM - 1:00 PM",
-        location: "DOS Campus Ground",
-  
-        enroll: "1000+ Expected",
-      },
-      {
-        image: "/course2.jpg",
-        badge: "Ceremony",
-        title: "Graduation Ceremony",
-        des: "Celebrating the achievements of our 2024 graduating class. Join us for this milestone event.",
-        date: "April 20, 2024",
-        time: "10:00 AM - 1:00 PM",
-        location: "DOS Campus Ground",
-  
-        enroll: "1000+ Expected",
-      },
-    ],
-    past:[
-
-      {
-        image: "/course3.jpg",
-        badge: "Workshop",
-        title: "Digital Marketing Workshop",
-        des: "Hands-on workshop covering SEO, social media marketing, and content strategy fundamentals.",
-        date: "March 15, 2024",
-        time: "9:00 AM - 5:00 PM",
-        location: "Training Room 2",
-  
-        enroll: "50+ Expected",
-      },
-      {
-        image: "/course3.jpg",
-        badge: "Workshop",
-        title: "Digital Marketing Workshop",
-        des: "Hands-on workshop covering SEO, social media marketing, and content strategy fundamentals.",
-        date: "March 15, 2024",
-        time: "9:00 AM - 5:00 PM",
-        location: "Training Room 2",
-  
-        enroll: "50+ Expected",
-      },
-      {
-        image: "/course3.jpg",
-        badge: "Workshop",
-        title: "Digital Marketing Workshop",
-        des: "Hands-on workshop covering SEO, social media marketing, and content strategy fundamentals.",
-        date: "March 15, 2024",
-        time: "9:00 AM - 5:00 PM",
-        location: "Training Room 2",
-  
-        enroll: "50+ Expected",
-      },
-    ]
-   };
   return (
     <div>
       <Banner
@@ -88,8 +19,42 @@ const page = () => {
         label="Events"
         bgImage="/eventbg.jpg"
       />
-      <UpcomingEvents events={eventsData.upcoming}/>
-      <PastEvents events={eventsData.past}/>
+
+      {/* Upcoming Events */}
+      <section className="py-20 flex flex-col items-center gap-3">
+        <span className={`bg-[#EFE2DE] ${quicksand.className} text-base uppercase text-[#B12531] rounded-full px-5 py-2 w-fit`}>
+          Don't miss out
+        </span>
+        <h1 className={`${meriweather.className} mt-5 text-4xl text-[#3D3029]`}>
+          Upcoming Events
+        </h1>
+        <p className={`${roboto.className} text-[#4A4E6A] text-base leading-5 text-center max-w-3xl`}>
+          Join us for workshops, seminars, and networking opportunities that will enhance your learning journey.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mx-6 mt-10 max-w-6xl">
+          {upcoming.map((event, i) => (
+            <EventCard key={i} {...event} showRegister={true} />
+          ))}
+        </div>
+      </section>
+
+      {/* Past Events */}
+      <section className="bg-[#F2F0ED] py-20 flex flex-col items-center gap-3">
+        <span className={`bg-[#EFE2DE] ${quicksand.className} text-base uppercase text-[#B12531] rounded-full px-5 py-2 w-fit`}>
+          Don't miss out
+        </span>
+        <h1 className={`${meriweather.className} mt-5 text-4xl text-[#3D3029]`}>
+          Past Events
+        </h1>
+        <p className={`${roboto.className} text-[#4A4E6A] text-base leading-5 text-center max-w-3xl`}>
+          Look back at previous events and see how we've helped learners achieve their goals.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mx-6 mt-10 max-w-6xl">
+          {past.map((event, i) => (
+            <EventCard key={i} {...event} showRegister={false} />
+          ))}
+        </div>
+      </section>
     </div>
   );
 };
