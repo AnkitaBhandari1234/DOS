@@ -64,15 +64,16 @@ const Team = () => {
     <p className={`text-[#4A4E6A] text-base ${roboto.className}`}>
       Industry professionals shaping the next generation of tech leaders.
     </p>
+
   </div>
 
   {/* Cards */}
-  <div className="grid grid-cols-3 place-items-center gap-y-15 mt-20 w-full pb-10">
+  <div className="grid grid-cols-3 place-items-center gap-y-15 mt-20 w-full  pb-10">
     {team.map((val, i) => (
       <div
         key={i}
         className="relative 
-                   w-[330px] h-[430px]
+                   w-[330px] h-[400px]
                    rounded-xl
                    shadow-[0_8px_30px_rgba(0,0,0,0.3)]
                    hover:shadow-[0_14px_40px_rgba(177,37,49,0.3)]

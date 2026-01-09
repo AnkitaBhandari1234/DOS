@@ -10,50 +10,50 @@ const roboto=Roboto({})
 
 
 
-const GalleryGrid = () => {
-    const galleryImages = [
-  {
-    id: 1,
-    src: "/gallery1.jpg",
-    title: "Frontend Live Class",
-    category: "Classroom",
-  },
-  {
-    id: 2,
-    src: "/gallery6.jpg",
-    title: "MERN Stack Workshop",
-    category: "Workshop",
-  },
-  {
-    id: 3,
-    src: "/gallery3.jpg",
-    title: "Tech Fest 2025",
-    category: "Event",
-  },
-  {
-    id: 4,
-    src: "/gallery4.jpg",
-    title: "Student Project Demo",
-    category: "Projects",
-  },
-  {
-    id: 5,
-    src: "/gallery5.jpg",
-    title: "Certification Ceremony",
-    category: "Achievements",
-  },
-  {
-    id: 6,
-    src: "/gallery6.jpg",
-    title: "Institute Infrastructure",
-    category: "Infrastructure",
-  },
-];
+const GalleryGrid = ({images}) => {
+//     const galleryImages = [
+//   {
+//     id: 1,
+//     src: "/gallery1.jpg",
+//     title: "Frontend Live Class",
+//     category: "Classroom",
+//   },
+//   {
+//     id: 2,
+//     src: "/gallery6.jpg",
+//     title: "MERN Stack Workshop",
+//     category: "Workshop",
+//   },
+//   {
+//     id: 3,
+//     src: "/gallery3.jpg",
+//     title: "Tech Fest 2025",
+//     category: "Event",
+//   },
+//   {
+//     id: 4,
+//     src: "/gallery4.jpg",
+//     title: "Student Project Demo",
+//     category: "Projects",
+//   },
+//   {
+//     id: 5,
+//     src: "/gallery5.jpg",
+//     title: "Certification Ceremony",
+//     category: "Achievements",
+//   },
+//   {
+//     id: 6,
+//     src: "/gallery6.jpg",
+//     title: "Institute Infrastructure",
+//     category: "Infrastructure",
+//   },
+// ];
 
   return (
           <section className="px-6 lg:px-14 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {galleryImages.map((img) => (
+          {images.map((img) => (
             <div
               key={img.id}
               className="group relative overflow-hidden rounded-2xl shadow-md"

@@ -1,4 +1,4 @@
-'use client'
+
 import { motion } from "framer-motion";
 import {  Merriweather, Quicksand, Roboto } from "next/font/google";
 import Image from "next/image";
@@ -57,8 +57,7 @@ Language with Excellence
     </h1>
 
     {/* Paragraph */}
-    <p className="text-[17px] text-[#E4DBD5] 
-      max-w-2xl mt-5">
+    <p className="text-[17px] text-[#E4DBD5] w-4/6  mt-5">
      Join Nepal's premier Korean language institute. Expert instructors, proven curriculum, and a path to success in TOPIK and EPS-TOPIK examinations.
     </p>
 
@@ -66,9 +65,7 @@ Language with Excellence
     <div className="flex gap-4 mt-8 font-medium text-">
       <Link
         href="/courses"
-        className="bg-[#B12531] flex items-center gap-3 text-white  px-8 py-3 rounded-full
-        hover:bg-[#8F1F28] tracking-wide
-        transition-all duration-300"
+        className="bg-[#B12531] flex items-center gap-3 text-white  px-8 py-3 rounded-full hover:bg-[#8F1F28] tracking-wide transition-all duration-300"
       >
         Explore Courses
         <IoArrowForward className="text-xl" />

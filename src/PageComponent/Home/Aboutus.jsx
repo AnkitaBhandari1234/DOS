@@ -114,7 +114,7 @@ const Aboutus = () => {
         className="w-full h-full object-cover rounded-lg shadow-[0_4px_20px_rgba(177,37,49,0.5)] border-4 border-gray-300"
       />
     </div>
-    <div className="absolute bottom-0 -left-5 w-[53%] h-[250px]">
+    <div className="absolute bottom-20 -left-5 w-[53%] h-[250px]">
       <Image
         src={codingImg}
         alt="Coding"

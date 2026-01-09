@@ -2,6 +2,7 @@ const courseData = [
   {
     slug: "korean-language-basics",
     image: "/feature1.jpg",
+    category:"Marketing",
     badge: "Beginner",
     title: "Korean Language Basics",
     des: "Start your Korean journey with Hangul, basic grammar, and essential vocabulary.",
@@ -80,6 +81,7 @@ const courseData = [
   {
     slug: "topik-preparation",
     image: "/feature2.jpg",
+     category:"Management",
     badge: "Intermediate",
     title: "TOPIK I & II Preparation",
     des: "Comprehensive preparation for TOPIK exams with mock tests and expert guidance.",
@@ -158,6 +160,7 @@ const courseData = [
   {
     slug: "eps-topik-training",
     image: "/feature3.jpg",
+     category:"Finance",
     badge: "All Levels",
     title: "EPS-TOPIK Training",
     des: "Specialized training for EPS-TOPIK with exam-focused practice.",

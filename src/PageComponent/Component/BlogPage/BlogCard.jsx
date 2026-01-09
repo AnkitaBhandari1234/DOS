@@ -8,7 +8,7 @@ const quicksand = Quicksand({ weight: "600" });
 const roboto = Roboto({ weight: "400" });
 const merriweather = Merriweather({ weight: "700" });
 
-const BlogCard = () => {
+const BlogCard = ({ blogs }) => {
  const allBlogs = [
   {
     id: 1,
@@ -52,7 +52,7 @@ const BlogCard = () => {
         <p className={`text-[#6E6B8F] mt-8 ${roboto.className}`}>Stay informed with the latest insights from our experts</p>
       </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-          {allBlogs.map((blog) => (
+          {blogs.map((blog) => (
             <Link
             href={`/blogs/${blog.slug}`}
               key={blog.id}

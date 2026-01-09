@@ -78,7 +78,7 @@ const StatsData = () => {
   >
     {item.icon}
   </div>
-        <h3 className={`text-5xl font-bold text-[#FCFBF8] ${meriweather.className} `}>
+        <h3 className={`text-4xl font-bold text-[#FCFBF8] ${meriweather.className} `}>
           {item.number}+
         </h3>
      

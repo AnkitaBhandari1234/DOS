@@ -89,7 +89,7 @@ const Header = () => {
     <button className={`bg-[#B12531] text-sm ${roboto.className} 
       text-white py-2.5 px-6 rounded-full cursor-pointer
       hover:bg-[#8F1F28]
-      transition-all duration-300`}>
+      transition-all duration-300 ease-in-out`}>
       Get Started
     </button>
 

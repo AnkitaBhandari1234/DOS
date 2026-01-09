@@ -7,7 +7,7 @@ const quicksand= Quicksand({
 })
 
 
-const GalleryFilter = () => {
+const GalleryFilter = ({ selectedCategory, setSelectedCategory }) => {
   const category=[
             "All",
             "Classroom",
@@ -23,8 +23,9 @@ const GalleryFilter = () => {
          {category.map((cat, i) => (
       <span
         key={i}
+        onClick={() => setSelectedCategory(cat)}
         className={`${quicksand.className} px-4 py-2 rounded-full text-sm cursor-pointer ${
-          cat === "All"
+         selectedCategory === cat
             ? "bg-[#B12531] text-white"
             : "bg-[#EFE2DE] text-[#B12531]"
         }`}
